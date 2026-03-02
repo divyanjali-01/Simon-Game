@@ -9,13 +9,19 @@ let level=0;
 
 let h2=document.querySelector("h2");
 
-document.addEventListener("click",function(){
-    if(started==false){
+function startGame(){
+    if(!started){
         console.log("game is started");
-        started= true;
-
+        started = true;
         levelUp();
     }
+}
+
+// Laptop ke liye
+document.addEventListener("keypress", startGame);
+
+// Mobile ke liye
+document.addEventListener("click", startGame);
 });
 
 function gameFlash(btn) {
